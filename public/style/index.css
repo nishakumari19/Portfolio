@@ -7,15 +7,15 @@
 
 .navbar {
     /* border: 2px solid red; */
-    width: 100%;
+    width: 1519px;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: black;
+    background-color: rgb(135, 65, 65);
     margin-bottom: 50px;
+    position: relative;
 }
-
 
 
 .navberitems {
@@ -48,7 +48,6 @@
     padding-right: 50px;
     gap: 50px;
     font-size: 35px;
-
 }
 
 .fa-linkedin,
@@ -56,16 +55,26 @@
     color: white;
 }
 
-.fa-linkedin:hover {
-    opacity: 0.7;
-}
-
+.fa-linkedin:hover,
 .fa-github:hover {
     opacity: 0.7;
 }
 
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+h1,
+h2,
+p {
+    color: rgb(135, 65, 65);
+}
+
 /* Hero section */
-.container{
+.container {
     /* border: 2px solid red; */
     height: 500px;
     width: 1519px;
@@ -73,13 +82,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(135, 65, 65);
     margin-bottom: 50px;
-    
+
 
 }
 
-.herosection{
+.herosection {
     /* border: 2px solid rgb(64, 213, 23); */
     width: 1300px;
     height: 500px;
@@ -88,10 +97,10 @@
     justify-content: center;
     gap: 50px;
     background-color: white;
-    border-radius: 25px; 
+    border-radius: 25px;
 }
 
-.box{
+.box {
     /* border: 2px solid rgb(228, 125, 15); */
     width: 555px;
     height: 300px;
@@ -101,32 +110,33 @@
     color: black;
     border-radius: 20px;
     padding: 20px;
-    
+
 }
 
-.btn{
+.btn {
     width: 130px;
     height: 50px;
     border-radius: 15px;
-    background-color: rgb(4, 2, 2);
+    background-color: rgb(135, 65, 65);
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
+    border: none;
 }
 
-.btn a{
+.btn a {
     text-decoration: none;
     color: white;
-    
+
 }
 
-.btn:hover{
+.btn:hover {
     opacity: 0.7;
 }
 
 
 
-.imgbox{
+.imgbox {
     border-radius: 400px;
     /* border: 2px solid rgb(243, 24, 228); */
     width: 450px;
@@ -138,51 +148,53 @@
 }
 
 
-
-.projectcontainer{
+/* Project Section */
+.projectcontainer {
     width: 1519px;
     height: 1400px;
     /* border: 2px solid red;  */
     margin-bottom: 50px;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    align-items: center; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
-    background-color: black;
+    background-color: rgb(135, 65, 65);
     position: relative;
-    color: white;}
+    color: white;
+}
 
-.probox{
+.probox {
     width: calc(40% - 100px);
     height: 500px;
     border: 1px solid rgb(223, 223, 223);
     border-radius: 30px;
     position: relative;
-    background-color: black;
+    background-color: rgb(135, 65, 65);
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: space-evenly;
     z-index: 1;
-    
+
 }
 
-@property --angle{
+@property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
-} 
+}
 
-.probox::after, .probox::before{
-    
+.probox::after,
+.probox::before {
+
     position: absolute;
     content: '';
     width: 100%;
     height: 100%;
     background-image: conic-gradient(from var(--angle), transparent 70%, white);
     border-radius: 30px;
-    top:50%;
+    top: 50%;
     left: 50%;
     translate: -50% -50%;
     z-index: -1;
@@ -190,55 +202,67 @@
     animation: 3s spin linear infinite;
 }
 
-.probox::before{
+.probox::before {
     filter: blur(1rem);
     opacity: 0.5;
 }
-@keyframes spin{
-    from{
+
+@keyframes spin {
+    from {
         --angle: 0deg;
-    }to{
+    }
+
+    to {
         --angle: 360deg;
     }
 }
 
-.blockbox{
-    background-color: black;
+.blockbox {
+    background-color: rgb(135, 65, 65);
     z-index: 9999;
     width: 100%;
     border-radius: 30px;
     height: 500px;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: flex-start;
     /* border: 1px solid red; */
+    gap:20px;
 }
 
-.projectimg{
-    width:100%;
-    height:250px;
+.projectimg {
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     /* border: 1px solid red;  */
     /* border-radius: 20px; */
 }
 
-.projectimg img{
-    width:100%;
-    height:250px;
+.projectimg img {
+    width: 100%;
+    height: 250px;
     /* border-radius: 20px; */
     object-fit: cover;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
-.projectinfo{
-    width: 400px;
-    height: 100px;
+.projectinfo {
+    width: 100%;
+    height: 200px;
     /* border: 1px solid rgb(13, 255, 0); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    gap:10px;
+    text-align: center;
+    gap: 20px;
+}
+
+.projectinfo p {
+    color: white;
 }
 
 .Projectbtn {
@@ -260,9 +284,9 @@
 
 
 
+/* About Section */
 
-
-.aboutfullinfo{
+.aboutfullinfo {
     width: 1519px;
     height: 500px;
     /* border: 2px solid red; */
@@ -270,10 +294,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: rgb(135, 65, 65);
 }
 
-.mebox{
+.mebox {
     /* border: 2px solid red; */
     width: 1300px;
     height: 500px;
@@ -283,10 +307,10 @@
     /* gap: 50px; */
     background-color: white;
     border-radius: 25px;
-    
+
 }
 
-.info{
+.info {
     /* border: 2px solid red; */
     height: 400px;
     width: 1000px;
@@ -295,11 +319,30 @@
     align-items: center;
     justify-content: flex-start;
     text-align: center;
+    padding: 10px;
+}
+#aboutmeheading{
     font-size: 18px;
+    height: 50px;
+    width: 100%;
+    /* border: 1px solid red; */
 }
 
+#aboutmepara{
+    font-size: 18px;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    /* border: 1px solid rgb(21, 250, 52); */
+}
+
+/* Form Section */
 .contactcontainer {
-    background: black;
+    background: rgb(135, 65, 65);
     width: 1519px;
     height: 800px;
     margin-bottom: 50px;
@@ -310,7 +353,7 @@
 }
 
 
-#contactForm{
+#contactForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -321,34 +364,39 @@
     height: 600px;
     border-radius: 20px;
     /* box-shadow: 4px 0 4px 0 white; */
-    
-    
+
+
 }
 
 
-.contactcontainer h2{
+.contactcontainer h2 {
     color: white;
     margin-top: 50px;
     font-size: 50px;
 }
 
-input, textarea {
-    width: 90%; /* Instead of fixed 800px */
+input,
+textarea {
+    width: 90%;
+    /* Instead of fixed 800px */
     max-width: 800px;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 10px;
     height: 40px;
-    text-align:left;
+    text-align: left;
     align-content: center;
 }
 
-textarea{
-    height: 300px;/* Fixed height */
-    align-content:flex-start;
-    resize: none; /* Prevents resizing */
-    overflow-y: auto; /* Allows scrolling if text overflows */
+textarea {
+    height: 300px;
+    /* Fixed height */
+    align-content: flex-start;
+    resize: none;
+    /* Prevents resizing */
+    overflow-y: auto;
+    /* Allows scrolling if text overflows */
 }
 
 .submitbtn {
@@ -364,7 +412,8 @@ textarea{
 }
 
 
-#scrollToTop{
+#scrollToTop {
+    border: 2px solid white;
     position: fixed;
     bottom: 16px;
     right: 10px;
@@ -374,31 +423,291 @@ textarea{
     font-size: 30px;
     display: none;
     cursor: pointer;
+    background-color: rgb(135, 65, 65);
+    z-index: 99999;
+
+}
+
+.fa-angle-up {
+    color: white;
 }
 
 
-
-.footerbox{
+/* Footer Section */
+.footerbox {
     width: 1519px;
     height: 50px;
     /* border: 2px solid red; */
-    background-color: black;
+    background-color: rgb(135, 65, 65);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 15px;
 }
 
-.footercontent{
+.footercontent {
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.year{
+.year {
     font-size: 15px;
 }
 
 
 
+@media screen and (max-width: 768px) {
+
+    .navbar {
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 80px;
+        justify-content: center;
+        gap: 140px;
+        z-index: 9999;
+
+    }
+
+    .navberitems {
+        display: none;
+        /* flex-direction: column; */
+        align-items: center;
+        position: absolute;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 5px;
+        top: 80px;
+        height: 35px;
+        width: 100%;
+        background-color: rgb(135, 65, 65);
+        padding: 5px 0;
+        font-size: 10px;
+
+    }
+
+    .navberitems.active {
+        display: flex;
+
+    }
+
+    .hamburger {
+        display: block;
+        /* border: 1px solid red; */
+
+    }
+
+    .social-media {
+        /* border: 1px solid rgb(0, 255, 13); */
+        width: 50px;
+        height: 50px;
+        justify-content: flex-start;
+        gap: 10px;
+        font-size: 30px;
+    }
+
+
+
+    /* Hero section */
+    .container {
+        /* border: 2px solid red; */
+        height: 400px;
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .herosection {
+        /* border: 1px solid rgb(64, 213, 23); */
+        width: 90%;
+        height: 400px;
+        flex-direction: column-reverse;
+        gap: 10px;
+        border-radius: 10px;
+        padding-top: 5px;
+
+    }
+
+    .box {
+        /* border: 1px solid rgb(228, 125, 15); */
+        width: 80%;
+        height: 200px;
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 10px;
+
+    }
+
+    .btn {
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+
+    .imgbox {
+        border-radius: 100px;
+        /* border: 1px solid rgb(243, 24, 228); */
+        width: 150px;
+        height: 150px;
+        background-image: url(/images/Nisha_Kumari.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* Project Section */
+    .projectcontainer {
+        width: 100%;
+        height: 1500px;
+        /* border: 2px solid red;  */
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .probox {
+        width: calc(115% - 100px);
+        height: 330px;
+        border-radius: 15px;
+    }
+
+    .probox::after,
+    .probox::before {
+        border-radius: 15px;
+    }
+
+    .blockbox {
+        border-radius: 15px;
+        /* border: 1px solid red; */
+        gap: 15px;
+    }
+
+    .projectimg {
+        height: 150px;
+        /* border: 1px solid red;  */
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .projectimg img {
+        height: 150px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .projectinfo {
+        height: 150px;
+        /* border: 1px solid rgb(13, 255, 0); */
+        gap: 10px;
+    }
+
+    .projectinfo p {
+        font-size: 15px;
+    }
+
+    .Projectbtn {
+        padding: 5px;
+    }
+
+    /* About section */
+    .aboutfullinfo {
+        width: 100%;
+        height: 400px;
+        /* border: 1px solid red; */
+    }
+
+    .mebox {
+        /* border: 1px solid red; */
+        width: 90%;
+        height: 400px;
+        border-radius: 10px;
+        padding-top: 5px;
+    }
+
+    .info {
+        /* border: 1px solid rgb(50, 211, 104); */
+        height: 300px;
+        width: 100%;
+        padding: 5px;
+        /* font-weight: bold; */
+    }
+    #aboutmeheading{
+        font-size: 11px;
+        height: 25px;
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+    
+    #aboutmepara{
+        font-size: 11px;
+        height: 275px;
+        /* border: 1px solid rgb(21, 250, 52); */
+    }
+
+
+
+    /* Form Section */
+    .contactcontainer {
+        width: 100%;
+        height: 500px;
+        justify-content: center;
+        /* border: 1px solid green; */
+    }
+
+
+    #contactForm {
+        width: 90%;
+        height: 400px;
+        border-radius: 10px;
+        /* border: 1px solid rgb(96, 40, 226); */
+    }
+
+
+    .contactcontainer h2 {
+        margin-top: 10px;
+        font-size: 35px;
+    }
+
+    input,
+    textarea {
+        padding: 5px;
+        border-radius: 5px;
+        height: 30px;
+    }
+
+    textarea {
+        height: 250px;
+    }
+
+    .submitbtn {
+        width: 150px;
+        height: 50px;
+        padding: 5px;
+        font-size: small;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+
+    #scrollToTop {
+        border: 1px solid white;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+
+    /* Footer Section */
+    .footerbox {
+        width: 100%;
+        height: 30px;
+        /* border: 2px solid red; */
+        font-size: 10px;
+    }
+    .year {
+        font-size: 10px;
+    }
+}

@@ -83,6 +83,7 @@ app.get("/contact", (req, res) => {
     res.render("contact");
 });
 
+console.log("Server restarted successfully!");
 
 
 app.listen(port, () => {

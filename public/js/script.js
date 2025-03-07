@@ -1,7 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     console.log("Footer script loaded successfully!");
-// });
-
 document.querySelector(".year").textContent = (new Date().getFullYear());
 
 
@@ -62,6 +58,5 @@ scrollButton.addEventListener("click", function () {
 
 
 function toggleMenu() {
-  let navbarItems = document.querySelector(".navbar-items");
-  navbarItems.classList.toggle("active");
+  document.getElementById("nav-links").classList.toggle("active");
 }
