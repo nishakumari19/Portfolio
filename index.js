@@ -1,0 +1,90 @@
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";  
+
+
+dotenv.config();
+
+
+
+const app = express()
+const port = 3000;
+
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.static("public"));
+
+
+
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
+app.post("/send-email", async (req, res) => {
+    const { name, email, message } = req.body;
+
+    if (!name || !email || !message) {
+        return res.status(400).json({ message: "All fields are required." });
+    }
+
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: process.env.EMAIL_USER,  
+            pass: process.env.EMAIL_PASS   
+        }
+    });
+
+    // **Email to Yourself**
+    const adminMailOptions = {
+        from: email,  
+        to: process.env.EMAIL_USER,  
+        subject: `New Contact Form Submission from ${name}`,
+        text: `You received a new message:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
+    };
+
+    // **Email to Sender**
+    const userMailOptions = {
+        from: process.env.EMAIL_USER,  
+        to: email,  
+        subject: "Thank You for Contacting Me!",
+        text: `Hi ${name},\n\nThank you for reaching out! Received your message and will get back to you soon.\n\nBest regards,\nNisha Kumari`
+    };
+
+    try {
+        await transporter.sendMail(adminMailOptions);
+        await transporter.sendMail(userMailOptions); 
+        res.json({ message: "Your message has been sent successfully!" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error sending email. Please try again later." });
+    }
+});
+
+
+
+app.get("/", (req, res) => {
+    res.render("home");
+});
+
+app.get("/about", (req, res) => {
+    res.render("about");
+});
+
+app.get("/projects", (req, res) => {
+    res.render("projects");
+});
+
+app.get("/contact", (req, res) => {
+    res.render("contact");
+});
+
+
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+  });
