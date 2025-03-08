@@ -4,31 +4,34 @@
     font-family: "Spline Sans", serif;
 }
 
+:root {
+    --primary-color:rgb(135, 65, 65);
+  }
+
 
 .navbar {
     /* border: 2px solid red; */
-    width: 1519px;
+    width:100%;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
     margin-bottom: 50px;
     position: relative;
 }
 
 
 .navberitems {
-    /* border: 2px solid rgb(0, 255, 13); */
+    /* border: 1px solid rgb(0, 255, 13); */
     width: 50%;
     height: 50px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .navberitems a {
-    padding-left: 50px;
     font-size: larger;
     text-decoration: none;
     color: white;
@@ -67,22 +70,26 @@
     cursor: pointer;
 }
 
+h1,h2{
+    font-size: 1rem;
+}
+
 h1,
 h2,
 p {
-    color: rgb(135, 65, 65);
+    color: var(--primary-color);
 }
 
 /* Hero section */
 .container {
     /* border: 2px solid red; */
     height: 500px;
-    width: 1519px;
+    width: 100%;
     margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
     margin-bottom: 50px;
 
 
@@ -117,7 +124,7 @@ p {
     width: 130px;
     height: 50px;
     border-radius: 15px;
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -150,7 +157,7 @@ p {
 
 /* Project Section */
 .projectcontainer {
-    width: 1519px;
+    width: 100%;
     height: 1400px;
     /* border: 2px solid red;  */
     margin-bottom: 50px;
@@ -159,7 +166,7 @@ p {
     justify-content: center;
     align-items: center;
     gap: 50px;
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
     position: relative;
     color: white;
 }
@@ -170,7 +177,7 @@ p {
     border: 1px solid rgb(223, 223, 223);
     border-radius: 30px;
     position: relative;
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,7 +225,7 @@ p {
 }
 
 .blockbox {
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
     z-index: 9999;
     width: 100%;
     border-radius: 30px;
@@ -287,14 +294,14 @@ p {
 /* About Section */
 
 .aboutfullinfo {
-    width: 1519px;
+    width: 100%;
     height: 500px;
     /* border: 2px solid red; */
     margin-bottom: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
 }
 
 .mebox {
@@ -342,8 +349,8 @@ p {
 
 /* Form Section */
 .contactcontainer {
-    background: rgb(135, 65, 65);
-    width: 1519px;
+    background: var(--primary-color);
+    width: 100%;
     height: 800px;
     margin-bottom: 50px;
     display: flex;
@@ -371,8 +378,7 @@ p {
 
 .contactcontainer h2 {
     color: white;
-    margin-top: 50px;
-    font-size: 50px;
+    margin-top: 50px; 
 }
 
 input,
@@ -423,7 +429,7 @@ textarea {
     font-size: 30px;
     display: none;
     cursor: pointer;
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
     z-index: 99999;
 
 }
@@ -435,10 +441,10 @@ textarea {
 
 /* Footer Section */
 .footerbox {
-    width: 1519px;
+    width: 100%;
     height: 50px;
     /* border: 2px solid red; */
-    background-color: rgb(135, 65, 65);
+    background-color: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -476,14 +482,13 @@ textarea {
         /* flex-direction: column; */
         align-items: center;
         position: absolute;
-        justify-content: center;
-        text-align: center;
+        justify-content: space-evenly;
         border: 1px solid white;
         border-radius: 5px;
         top: 80px;
         height: 35px;
         width: 100%;
-        background-color: rgb(135, 65, 65);
+        background-color: var(--primary-color);
         padding: 5px 0;
         font-size: 10px;
 
@@ -569,7 +574,7 @@ textarea {
     }
 
     .probox {
-        width: calc(115% - 100px);
+        width: calc(100% - 100px);
         height: 330px;
         border-radius: 15px;
     }
@@ -577,6 +582,7 @@ textarea {
     .probox::after,
     .probox::before {
         border-radius: 15px;
+        animation: 6s spin linear infinite;
     }
 
     .blockbox {
