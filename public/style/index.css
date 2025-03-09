@@ -736,36 +736,41 @@ textarea {
 
         .aboutfullinfo {
             width: 100%;
-            height: 500px;
+            height: 600px;
             /* border: 1px solid red; */
         }
 
         .mebox {
             /* border: 1px solid red; */
             width: 90%;
-            height: 500px;
+            height: 600px;
             border-radius: 10px;
             padding-top: 5px;
         }
 
         .info {
             /* border: 1px solid rgb(50, 211, 104); */
-            height: 400px;
+            height: 500px;
             width: 100%;
             padding: 5px;
             /* font-weight: bold; */
         }
 
         #aboutmeheading {
-            font-size: 13px;
+            font-size: 15px;
             height: 50px;
             width: 100%;
             /* border: 1px solid red; */
         }
 
         #aboutmepara {
-            font-size: 12px;
-            height: 350px;
+            font-size: 13px;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
             /* border: 1px solid rgb(21, 250, 52); */
         }
 
