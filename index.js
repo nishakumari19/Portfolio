@@ -71,19 +71,19 @@ app.post("/send-email", async (req, res) => {
 
 
 app.get("/", (req, res) => {
-    res.render("home");
+    res.render("home", { pageClass: "home-page" });
 });
 
 app.get("/about", (req, res) => {
-    res.render("about");
+    res.render("about",  { pageClass: "about-page" });
 });
 
 app.get("/projects", (req, res) => {
-    res.render("projects");
+    res.render("projects", { pageClass: "projects-page" });
 });
 
 app.get("/contact", (req, res) => {
-    res.render("contact");
+    res.render("contact", { pageClass: "contact-page" });
 });
 
 if (process.env.NODE_ENV !== "production") {
