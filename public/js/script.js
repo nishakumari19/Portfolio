@@ -60,3 +60,28 @@ scrollButton.addEventListener("click", function () {
 function toggleMenu() {
   document.getElementById("nav-links").classList.toggle("active");
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const text = "New Project Coming Soon...";
+  let index = 0;
+
+  function typeEffect() {
+    if (index < text.length) {
+      document.querySelector(".typing-text").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, 100);
+    } else {
+      setTimeout(() => {
+        document.querySelector(".typing-text").innerHTML = ""; // Clear text
+        index = 0; // Reset index
+        typeEffect(); // Restart effect
+      }, 1000); // Wait for 2 seconds before repeating
+    }
+  }
+
+  typeEffect();
+});
+
+
+

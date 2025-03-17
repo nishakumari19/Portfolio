@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: flex-start;
     background-color: var(--primary-color);
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     position: relative;
 }
 
@@ -91,7 +91,7 @@ p {
     justify-content: center;
     align-items: center;
     background-color: var(--primary-color);
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 
 
 }
@@ -120,11 +120,18 @@ p {
     padding: 20px;
 
 }
+.btndiv{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* border: 1px solid red; */
+    gap:10px;
+}
 
 .btn {
     width: 130px;
     height: 50px;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: var(--primary-color);
     font-size: 15px;
     font-weight: bold;
@@ -155,13 +162,71 @@ p {
     background-repeat: no-repeat; */
 }
 
+.tag-list {
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.inner {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: loop 25s linear infinite;
+    will-change: transform;
+    text-rendering: optimizeLegibility;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    gap: 0 0.2rem;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    background-color: #334155;
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+}
+
+.tag span {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 500;
+}
+
+/* Infinite Scroll Animation */
+@keyframes loop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Fade effect on both sides */
+.fade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+
+  
 
 /* Project Section */
 .projectcontainer {
     width: 100%;
-    height: 1400px;
+    height: 2000px;
     /* border: 2px solid red;  */
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -288,6 +353,15 @@ p {
     background-color: #589de6;
 }
 
+.typing-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Change color as needed */
+    border-right: 2px solid white; /* Cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 
 
 
@@ -298,7 +372,7 @@ p {
     width: 100%;
     height: 500px;
     /* border: 2px solid red; */
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -354,7 +428,7 @@ p {
     background: var(--primary-color);
     width: 100%;
     height: 800px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -527,7 +601,7 @@ textarea {
     /* Hero section */
     .container {
         /* border: 2px solid red; */
-        height: 400px;
+        height: 500px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -537,7 +611,7 @@ textarea {
     .herosection {
         /* border: 1px solid rgb(64, 213, 23); */
         width: 90%;
-        height: 400px;
+        height: 500px;
         display: flex;
         flex-direction: column-reverse;
         gap: 10px;
@@ -560,6 +634,7 @@ textarea {
         width: 100px;
         height: 40px;
         border-radius: 10px;
+        font-size: 12px;
     }
 
 
@@ -574,10 +649,20 @@ textarea {
         background-repeat: no-repeat;
     }
 
+    .inner {
+        gap: 0.5rem;
+        width: min-content;
+    }
+
+    .tag span {
+        font-size: 1rem;
+    }
+
+
     /* Project Section */
     .projectcontainer {
         width: 100%;
-        height: 1500px;
+        height: 2300px;
         display: flex;
         /* border: 2px solid red;  */
         flex-direction: column;
@@ -585,8 +670,8 @@ textarea {
     }
 
     .probox {
-        width: calc(100% - 100px);
-        height: 330px;
+        width: calc(90% - 40px);
+        height: 350px;
         border-radius: 15px;
     }
 
@@ -628,6 +713,15 @@ textarea {
     .Projectbtn {
         padding: 5px;
     }
+    .typing-text {
+        font-size: 15px;
+        font-weight: bold;
+        color: white; /* Change color as needed */
+        border-right: 2px solid white; /* Cursor effect */
+        white-space: nowrap;
+        overflow: hidden;
+    }
+      
 
     /* About section */
     .aboutfullinfo {
