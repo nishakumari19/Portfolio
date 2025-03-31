@@ -57,11 +57,6 @@ scrollButton.addEventListener("click", function () {
 
 
 
-function toggleMenu() {
-  document.getElementById("nav-links").classList.toggle("active");
-}
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const text = "New Project Coming Soon...";
   let index = 0;
@@ -82,6 +77,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   typeEffect();
 });
-
 
 
