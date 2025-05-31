@@ -174,11 +174,11 @@
     <div class="contactcontainer" id="contact">
         <h2>Contact Me</h2>
         <form id="contactForm" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             <div class="g-recaptcha" data-sitekey="<%= process.env.RECAPTCHA_SITE_KEY %>"></div>
-            <button class="submitbtn" type="submit">Send Message</button>
+            <button class="submitbtn" id="submitBtn" type="submit">Send Message</button>
         </form>
         <p id="responseMessage"></p>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
