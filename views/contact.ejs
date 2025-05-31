@@ -2,15 +2,37 @@
 
 <div class="contactcontainer">
     <h2>Contact Me</h2>
-    <form id="contactForm" action="/send-email" method="POST">
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-        <button class="submitbtn" id="submitBtn" type="submit">Send Message</button>
+    <form id="contactForm" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <div class="g-recaptcha" data-sitekey="<%= process.env.RECAPTCHA_SITE_KEY %>"></div>
+        <button class="submitbtn" type="submit">Send Message</button>
     </form>
     <p id="responseMessage"></p>
 </div>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
+    try {
+        const res = await fetch("/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        document.getElementById("responseMessage").textContent = result.message;
+        if (res.ok) form.reset();
+    } catch (err) {
+        document.getElementById("responseMessage").textContent = "Something went wrong. Try again.";
+    }
+});
+</script>
 
 <%- include("partials/footer.ejs") %>
