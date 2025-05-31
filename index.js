@@ -88,10 +88,10 @@ app.post("/send-email", async (req, res) => {
 });
 
 // EJS pages
-app.get("/", (req, res) => res.render("home", { pageClass: "home-page" }));
+app.get("/", (req, res) => res.render("home", { pageClass: "home-page", RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY }));
 app.get("/about", (req, res) => res.render("about", { pageClass: "about-page" }));
 app.get("/projects", (req, res) => res.render("projects", { pageClass: "projects-page" }));
-app.get("/contact", (req, res) => res.render("contact", { pageClass: "contact-page" }));
+app.get("/contact", (req, res) => res.render("contact", { pageClass: "contact-page",RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY }));
 
 if (process.env.NODE_ENV !== "production") {
   app.listen(port, () => console.log(`Listening on port ${port}`));
